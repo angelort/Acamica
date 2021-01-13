@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programan 21: 2</title>
+</head>
+
+<body>
+    <h1>Ejercicio #2</h1>
+    <p>A nuestro script agreguemos el promedio de
+        todos los números ingresados. <br>
+        Muestra el resultado con un alert</p>
+    <script>
+    let inputUser;
+        let numbers = [];
+
+        // Función para solicitar números al usuario
+        function getNumbers (orderNum) {
+            do {
+                inputUser = parseFloat(prompt("Ingresa el " + orderNum + " número"));
+            }
+            while (isNaN(inputUser));
+            return inputUser;
+        }
+
+
+        // Recorrer arreglo para guardar los números que ingresa el usuario
+
+        const msjUser = ["primer", "segundo", "tercer", "cuarto", "quinto"]; 
+        for (let i = 0; i < 5; i+= 1) {
+            numbers[i] = getNumbers(msjUser[i]);
+        }
+        
+        console.log(numbers);
+
+        // Hacer suma con los valores dentro del arreglo
+        let result = 0;
+        let average;
+        for (let index = 0; index < numbers.length; index+= 1) {
+            result += numbers[index];
+            average = (result/numbers.length);//Crea el promedio
+        }
+        alert("La suma de los números es: " + result);
+        alert("El promedio es: " + average);//Muestra el resultado del promedio
+    </script>
+</body>
+
+</html>

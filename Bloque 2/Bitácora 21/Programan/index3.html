@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programan 21: 3</title>
+</head>
+
+<body>
+    <h1>Ejercicio #3</h1>
+    <p>Ingresar N cantidad de edades mediante prompt hasta que se ingrese un cero.
+        Al finalizar mostrar cuántos son mayores de edad. <br>
+        Muestra el resultado con un alert</p>
+    <script>
+        // Variables de usuario y arreglo para almacenar los números ingresados por el usuario
+        let inputUser;
+        let ages = [];
+
+        // Función para validar que los datos sean números
+        let getAges = () => {
+            do {
+                inputUser = parseInt(prompt("Ingresa las edades de los usuarios. \nIngresa un cero '0' para finalizar"));
+            }
+            while (isNaN(inputUser));
+            return inputUser;
+        }
+
+        let i = 0;
+        let inputAges = getAges();
+        while (inputAges != 0) {
+            ages[i] = inputAges;
+            inputAges = getAges();
+            i++;
+        }
+        console.log(ages);
+
+        let oldEnough = (savedAges) => {
+            let counter = 0;
+            for (i = 0; i < savedAges.length; i++) {
+                if (savedAges[i] >= 18) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+        let result = oldEnough(ages);
+        alert(result + " usuarios son mayores de edad");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programan 21: 1</title>
+</head>
+
+<body>
+    <h1>Ejercicio #1</h1>
+    <p>Crear un script que permita ingresar solamente 5 valores mediante prompt y nos muestre la suma total de todos los
+        valores ingresados. <br>
+        Mostrar el resultado utilizando un alert</p>
+
+    <script>
+        // Variables de usuario y arreglo para almacenar los números ingresados por el usuario
+        let inputUser;
+        let numbers = [];
+
+        // Función para solicitar números al usuario
+        function getNumbers (orderNum) {
+            do {
+                inputUser = parseFloat(prompt("Ingresa el " + orderNum + " número"));
+            }
+            while (isNaN(inputUser));
+            return inputUser;
+        }
+
+
+        // Recorrer arreglo para guardar los números que ingresa el usuario
+
+        const msjUser = ["primer", "segundo", "tercer", "cuarto", "quinto"]; 
+        for (let i = 0; i < 5; i+= 1) {
+            numbers[i] = getNumbers(msjUser[i]);
+        }
+        
+        console.log(numbers);
+
+        // Hacer suma con los valores dentro del arreglo
+        let result = 0;
+        let average;
+        for (let index = 0; index < numbers.length; index+= 1) {
+            result += numbers[index];
+        }
+        alert("La suma de los números es: " + result);
+    </script>
+</body>
+
+</html>

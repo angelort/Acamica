@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programan Bitácora 20</title>
+</head>
+
+<body>
+    <script>
+        let funds = 1000;
+        let destinataries = ["Juan Perez", "Adriana", "Miguel", "Sofía", "Ale"];
+
+        const deposit = () => {
+            let amount = parseInt(prompt("Ingresa la cantidad a transferir"));
+            let destinatary = prompt("Ingresa el destinatario a quien vas a transferir");
+            ;
+
+            let name = destinataryExists(destinatary);
+            // alert(name)
+            while ((amount >= funds) || (name == false)) {
+                if (amount >= funds) {
+                    amount = parseInt(prompt("No cuentas con los fondos suficientes, ingresa una cantidad menor"));
+                }
+                if (name == false) {
+                    destinatary = prompt("El destinatario no existe, ingresa un nombre válido");
+                    name = destinataryExists(destinatary);
+                }
+            }
+            alert("Transferencia exitosa");
+        }
+
+        const destinataryExists = destinataryName => {
+            let found = destinataries.find(element => {
+                if (element == destinataryName) {
+                    return element;
+                }
+            });
+            // alert(found)
+            if (found == destinataryName) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        deposit();
+    </script>
+</body>
+
+</html>
